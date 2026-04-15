@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "link-in-bio-decodelabs",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

@@ -1,0 +1,181 @@
+/* 
+   DecodeLabs Project 1: Link-in-Bio Clone
+   Design System:
+   - Mocha Mousse: #A5856F
+   - Ethereal Blue: #A0D4E0
+   - Moonlit Grey: #F2F0EA
+*/
+
+:root {
+    --mocha-mousse: #A5856F;
+    --ethereal-blue: #A0D4E0;
+    --moonlit-grey: #F2F0EA;
+    --text-dark: #333333;
+    --white: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    background-color: var(--moonlit-grey);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+.profile-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.profile-image-container {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--mocha-mousse);
+    background-color: var(--white);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--mocha-mousse);
+}
+
+.profile-bio {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Links Container */
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.link-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--mocha-mousse);
+    color: var(--white);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.link-button:hover {
+    background-color: var(--ethereal-blue);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.link-button:active {
+    transform: translateY(0);
+}
+
+/* Footer Actions */
+.actions-footer {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--mocha-mousse);
+    background: transparent;
+    color: var(--mocha-mousse);
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-button:hover {
+    background-color: var(--mocha-mousse);
+    color: var(--white);
+}
+
+.action-button svg {
+    transition: var(--transition);
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toast.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Desktop Adjustments */
+@media (min-width: 768px) {
+    body {
+        padding: 4rem 1rem;
+    }
+    
+    .profile-name {
+        font-size: 1.75rem;
+    }
+    
+    .link-button {
+        padding: 1.25rem;
+    }
+}
